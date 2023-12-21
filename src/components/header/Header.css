@@ -1,0 +1,12 @@
+.navbar {
+  background-color: #ffc107;
+}
+
+.navbar-brand, .navbar-nav a {
+  color: #000; 
+  font-family: 'Eight Bits', sans-serif;
+}
+
+.navbar-toggler-icon {
+  background-color: #000; 
+}

@@ -1,0 +1,112 @@
+.add-element-btn {
+  margin-top: 10px;
+}
+
+button {
+  cursor: pointer;
+  padding: 8px;
+  background-color: #ffc107;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #ffc107;
+}
+
+.container-parser {
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.card-parser {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+  max-width: 900px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.card-body {
+  padding: 10px;
+}
+
+.delete-btn {
+  /* background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 10px; */
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 10px;
+  border: 1px solid #000;
+  width: 16px;
+  height: 16px;
+  background: url('https://cdn.icon-icons.com/icons2/2131/PNG/512/cancel_cross_delete_remove_icon_131554.png') no-repeat center center / contain;
+}
+
+.delete-btn:hover {
+  background-color: #ffc107; 
+  color: #000;
+}
+
+.element-locator {
+  /**/
+  display: flex;
+  /**/
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.element-locator input {
+  margin-bottom: 5px;
+}
+
+.element-locator span {
+  margin-right: 5px;
+}
+
+.form {
+  margin-bottom: 30px;
+}
+
+.form-group {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.form-group:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: bold; 
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-center {
+  text-align: center;
+}

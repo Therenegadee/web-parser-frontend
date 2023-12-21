@@ -1,8 +1,8 @@
 import './App.css'
-import ListParserResultsComponent from './components/ListParserResultsComponent';
-import HeaderComponent from './components/HeaderComponent';
-import FooterComponent from './components/FooterComponent';
-import ParserComponent from './components/ParserComponent';
+import ListParserResultsComponent from './components/parserComponents/ListParserResultsComponent';
+import HeaderComponent from './components/header/HeaderComponent';
+import FooterComponent from './components/footer/FooterComponent';
+import ParserSettingsFormComponent from './components/parserComponents/ParserSettingsFormComponent';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
       <HeaderComponent />
         <Routes>
           <Route path='/parser/results' element = {<ListParserResultsComponent />}> </Route>
-          <Route path='/parser/create' element = {<ParserComponent />}> </Route>
+          <Route path='/parser/create' element = {<ParserSettingsFormComponent />}> </Route>
         </Routes>
       <FooterComponent />
     </BrowserRouter>

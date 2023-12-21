@@ -1,52 +1,13 @@
 body {
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.container {
-  flex: 1;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-.navbar {
-    background-color: #ffc107;
-}
-  
-.navbar-brand, .navbar-nav a {
-    color: #000000; 
-    font-family: 'Eight Bits', sans-serif;
-}
-  
-.navbar-toggler-icon {
-    background-color: #000000; 
-}
-
-.footer {
-  background-color: #ffc107;
-  color: #000000;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 10px;
-  z-index: 1000;
-}
-
-.form-group {
+    padding: 0;
     display: flex;
     flex-direction: column;
-    margin-bottom: 60px;
-    z-index: 1000;  
+    min-height: 100vh;
+    margin: 0; /* добавлено для устранения отступов по умолчанию */
   }
-
-.element-locator {
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    z-index: 1000; 
+  
+  .container {
+    /* flex: 1; */
+    margin-top: 0;
+    margin-bottom: 0;
   }
