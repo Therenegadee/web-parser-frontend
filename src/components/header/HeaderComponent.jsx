@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../../assets/dh.svg';
 import './Header.css';
+import profileLogo from '../../assets/skull-svgrepo-com.svg'
 import { Link } from 'react-router-dom';
 
 const HeaderComponent = () => {
@@ -38,7 +39,7 @@ const HeaderComponent = () => {
           </div>
           <div className='nav-item'>
             <a className='nav-link' href='/profile'>
-              <i className="fas fa-user"></i>
+              <img src={profileLogo} alt='Profile Logo' style={{ height: '30px' }}/>
             </a>
           </div>
         </div>

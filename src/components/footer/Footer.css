@@ -28,6 +28,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: auto;
 }
 
 .footer-section {
@@ -53,4 +54,11 @@
   height: 20px;
   margin-right: 5px;
   margin-bottom: 5px;
+}
+
+.tg-icon {
+  width: 27px;
+  height: 27px;
+  margin-right: 3px;
+  margin-bottom: 3px;
 }
