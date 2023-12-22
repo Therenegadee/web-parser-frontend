@@ -18,7 +18,6 @@
 
 .add-element-btn {
   text-align: center;
-  
   margin-top: 10px;
 }
 
@@ -41,17 +40,17 @@ button:hover {
 .button-container {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 30px;
+  margin-bottom: 0px;
 }
 
 .container-parser {
-  display: flexbox;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   box-sizing: border-box;
   padding: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 0px;
 }
 
 .card-parser {

@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../assets/dh.png';
+import logo from '../../assets/dh.svg';
 import './Header.css';
 import { Link } from 'react-router-dom';
 

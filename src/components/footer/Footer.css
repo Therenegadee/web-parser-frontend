@@ -1,11 +1,56 @@
+@font-face {
+  font-family: 'Epilepsy Sans Bold';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Epilepsy Sans Bold'), 
+       url(../../fonts/EpilepsySansBold.ttf) format('woff2'),
+       url(../../fonts/EpilepsySansBold.ttf) format('woff');
+}
+
+@font-face {
+  font-family: 'Epilepsy Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Epilepsy Sans'), 
+       url(../../fonts/EpilepsySans.ttf) format('woff2'),
+       url(../../fonts/EpilepsySans.ttf) format('woff');
+}
+
 .footer {
-  background-color: #ffc107;
-  color: #000;
-  text-align: center;
-  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
+  background-color: #ffc107;
+  color: #000;
+  text-align: center;
   padding: 10px;
   z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-right: 50px;
+  margin-left: 50px;
+  font-family: 'Epilepsy Sans', sans-serif;
+}
+
+.footer-section a {
+  text-decoration: none;
+  color: #000;
+}
+
+.footer-section a:hover {
+  color: rgb(255, 106, 0);
+}
+
+.github-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  margin-bottom: 5px;
 }
