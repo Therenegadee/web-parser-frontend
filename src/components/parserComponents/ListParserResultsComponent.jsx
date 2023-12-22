@@ -54,14 +54,14 @@ const ListParserResultsComponent = () => {
         },
     ];
     
-    // const [parserResult, setParserResult] = useState([]);
-    // useEffect(() => {
-    //     ParserService.parserResultList().then((response) => {
-    //         setParserResult(response.data)
-    //     }).catch(error => {
-    //         console.error(error);
-    //     })
-    // }, []);
+    const [parserResult, setParserResult] = useState([]);
+    useEffect(() => {
+        ParserService.parserResultList().then((response) => {
+            setParserResult(response.data)
+        }).catch(error => {
+            console.error(error);
+        })
+    }, []);
 
     function createNewParsingQuery() {
         navigator('/parser/create')

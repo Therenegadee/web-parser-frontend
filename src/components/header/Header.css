@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Eight Bits';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Eight Bits'), local('EightBits-Regular'),
+       url(./assets/EightBits.ttf) format('truetype');
+}
+
 .navbar {
   background-color: #ffc107;
 }

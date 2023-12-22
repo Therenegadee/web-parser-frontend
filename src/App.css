@@ -3,11 +3,10 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    margin: 0; /* добавлено для устранения отступов по умолчанию */
+    margin: 0;
   }
   
   .container {
-    /* flex: 1; */
     margin-top: 0;
     margin-bottom: 0;
   }

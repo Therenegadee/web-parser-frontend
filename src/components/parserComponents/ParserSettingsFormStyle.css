@@ -1,8 +1,9 @@
 .add-element-btn {
+  text-align: center;
   margin-top: 10px;
 }
 
-button {
+.add-element-btn button {
   cursor: pointer;
   padding: 8px;
   background-color: #ffc107;
@@ -10,6 +11,17 @@ button {
   border: none;
   border-radius: 5px;
   margin-top: 10px;
+  display: inline-block;
+}
+
+
+button {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #ffc107;
+  color: #000;
+  border: none;
+  border-radius: 5px;
 }
 
 button:hover {
@@ -17,10 +29,12 @@ button:hover {
 }
 
 .container-parser {
+  display: flexbox;
   height: 100vh;
   width: 100%;
-  margin: 0;
   box-sizing: border-box;
+  padding: 40px;
+  margin-bottom: 20px;
 }
 
 .card-parser {
@@ -39,16 +53,6 @@ button:hover {
 }
 
 .delete-btn {
-  /* background-color: #fff;
-  color: #000;
-  border: 1px solid #000;
-  width: 20px;
-  height: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  margin-right: 10px; */
   display: inline-block;
   margin-right: 10px;
   margin-left: 10px;
@@ -64,9 +68,7 @@ button:hover {
 }
 
 .element-locator {
-  /**/
   display: flex;
-  /**/
   align-items: center;
   border: 1px solid #ccc;
   padding: 10px;
@@ -97,14 +99,41 @@ button:hover {
 }
 
 .form-label {
-  margin-bottom: 10px;
   text-align: center;
   font-weight: bold; 
+}
+
+.form-label:not(:first-child) {
+  margin-top: 20px;
 }
 
 .form-input {
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
+}
+
+
+.form-input label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.form-input input,
+.form-input select {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.elmnt-lctr-form-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.option-input {
+  size: 40px;
+  margin-bottom: 10px;
 }
 
 .text-center {
