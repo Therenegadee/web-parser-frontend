@@ -1,6 +1,50 @@
 import React, { useState } from 'react';
 import './ParserSettingsFormStyle.css';
 
+const ElementLocator = ({ element, index, handleRemoveElement, handleInputChange }) => {
+  return (
+    <div className='element-locator'>
+      <span>{`Элемент парсинга №${index + 1}`}</span>
+      <button type='button' onClick={() => handleRemoveElement(index)} className='delete-btn'></button>
+      <div className='elmnt-lctr-form-input'>
+        <input
+          type='text'
+          name='name'
+          value={element.name}
+          placeholder='Название элемента'
+          onChange={(e) => handleInputChange(e, index)}
+        />
+        <select
+          name='type'
+          value={element.type}
+          onChange={(e) => handleInputChange(e, index)}
+        >
+          <option value=''>Выберите тип</option>
+          <option value='CSV'>CSV</option>
+          <option value='XPATH'>XPATH</option>
+          <option value='Tag+Attr'>Tag+Attr</option>
+        </select>
+        <input
+          type='text'
+          name='pathToLocator'
+          value={element.pathToLocator}
+          placeholder='Путь к элементу'
+          onChange={(e) => handleInputChange(e, index)}
+        />
+        {element.type === 'Tag+Attr' && (
+          <input
+            type='text'
+            name='extraPointer'
+            value={element.extraPointer}
+            placeholder='Аттрибут'
+            onChange={(e) => handleInputChange(e, index)}
+          />
+        )}
+      </div>
+    </div>
+  );
+};
+
 const ParserSettingsFormComponent = () => {
   const [parserSettings, setParserSettings] = useState({
     firstPageUrl: '',
@@ -64,13 +108,13 @@ const ParserSettingsFormComponent = () => {
     <div className='container-parser'>
       <div className='row'>
         <div className='card-parser'>
-          <h2 className='text-center'> Пресет парсинга</h2>
+          <h2 className='text-heading'> Создать Пресет Парсинга</h2>
           <div className='card-body'>
             <form className='form' onSubmit={handleSubmit}>
               <div className='form-group'>
-              <h4 className='form-label'>Основные настройки</h4>
-                <div className='form-input '>
-                  <label>
+                <h4 className='form-label'>Основные Настройки</h4>
+                <div className='form-input'>
+                <label className='form-input-label'>
                   URL первой страницы
                   <input
                     type='text'
@@ -80,7 +124,7 @@ const ParserSettingsFormComponent = () => {
                     onChange={(e) => setParserSettings({ ...parserSettings, firstPageUrl: e.target.value })}
                   />
                   </label>
-                  <label>
+                  <label className='form-input-label'>
                   Количество страниц для парсинга
                   <input
                     type='text'
@@ -90,7 +134,7 @@ const ParserSettingsFormComponent = () => {
                     onChange={(e) => setParserSettings({ ...parserSettings, numOfPagesToParse: e.target.value })}
                   />
                   </label>
-                  <label>
+                  <label className='form-input-label'>
                   Класс элемента
                   <input
                     type='text'
@@ -100,7 +144,7 @@ const ParserSettingsFormComponent = () => {
                     onChange={(e) => setParserSettings({ ...parserSettings, className: e.target.value })}
                   />
                   </label>
-                  <label>
+                  <label className='form-input-label'>
                   Тег элемента
                   <input
                     type='text'
@@ -110,7 +154,7 @@ const ParserSettingsFormComponent = () => {
                     onChange={(e) => setParserSettings({ ...parserSettings, tagName: e.target.value })}
                   />
                   </label>
-                  <label>
+                  <label className='form-input-label'>
                   CSS селектор для следующей страницы
                   <input
                     type='text'
@@ -120,75 +164,48 @@ const ParserSettingsFormComponent = () => {
                     onChange={(e) => setParserSettings({ ...parserSettings, cssSelectorNextPage: e.target.value })}
                   />
                   </label>
-                </div>
-              <h4 className='form-label'>Элементы парсинга</h4>
-                {parserSettings.elementLocators.map((element, index) => (
-                  <div key={index} className='element-locator'>
-                    <span>{`Элемент парсинга №${index + 1}`}</span>
-                    <button type='button' onClick={() => handleRemoveElement(index)} className='delete-btn'>
-                    </button>
-                    <div className='elmnt-lctr-form-input '>
-                      <input
-                        type='text'
-                        name='name'
-                        value={element.name}
-                        placeholder='Название элемента'
-                        onChange={(e) => handleInputChange(e, index)}
-                      />
-                      
+                  <label className='form-input-label'>
+                    Формат файла вывода
+                    <div className='option-input'>
                       <select
-                        name='type'
-                        value={element.type}
-                        onChange={(e) => handleInputChange(e, index)}
-                        >
-                        <option value=''>Выберите тип</option>
+                        name='outputFileType'
+                        value={parserSettings.outputFileType}
+                        onChange={(e) => setParserSettings({ ...parserSettings, outputFileType: e.target.value })}
+                      >
+                        <option value=''>Выберите тип файла</option>
                         <option value='CSV'>CSV</option>
-                        <option value='XPATH'>XPATH</option>
-                        <option value='Tag+Attr'>Tag+Attr</option>
+                        <option value='XLSX'>XLSX</option>
                       </select>
-                      <input
-                        type='text'
-                        name='pathToLocator'
-                        value={element.pathToLocator}
-                        placeholder='Путь к элементу'
-                        onChange={(e) => handleInputChange(e, index)}
-                      />
-                      {element.type === 'Tag+Attr' && (
-                        <input
-                          type='text'
-                          name='extraPointer'
-                          value={element.extraPointer}
-                          placeholder='Аттрибут'
-                          onChange={(e) => handleInputChange(e, index)}
-                        />
-                      )}
-                    </div>
                   </div>
-                ))}
-                <div className='add-elemnt-btn'>
-                  <button type='button' onClick={handleAddElement}>
-                    Добавить элемент парсинга
-                  </button>
+                </label>
                 </div>
               </div>
-              <h4 className='form-label'> Формат файла вывода </h4>
-                <div className='option-input'>
-                  <select
-                    name='outputFileType'
-                    value={parserSettings.outputFileType}
-                    onChange={(e) => setParserSettings({ ...parserSettings, outputFileType: e.target.value })}
-                    >
-                    <option value=''>Выберите тип файла</option>
-                    <option value='CSV'>CSV</option>
-                    <option value='XLSX'>XLSX</option>
-                  </select>
-                </div>
+              <h4 className='form-label'>Элементы парсинга</h4>
+              {parserSettings.elementLocators.map((element, index) => (
+                <ElementLocator
+                  key={index}
+                  element={element}
+                  index={index}
+                  handleRemoveElement={handleRemoveElement}
+                  handleInputChange={handleInputChange}
+                />
+              ))}
+              <div className='add-element-btn'>
+                <button type='button' onClick={handleAddElement}>
+                  Добавить элемент парсинга
+                </button>
+              </div>
+              {/* <div className='button'>
+                <button type='submit'>Создать пресет</button>
+              </div> */}
             </form>
           </div>
         </div>
-        <div className='button'>
-              <button type='submit'>Создать пресет</button>
-          </div>
+        <div className='button-container'>
+          <button type='submit' className='create-preset-btn'>
+            Создать пресет
+          </button>
+        </div>
       </div>
     </div>
   );

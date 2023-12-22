@@ -1,10 +1,9 @@
-// import './App.css'
-// import ListParserResultsComponent from './components/parserComponents/ListParserResultsComponent';
-// import HeaderComponent from './components/header/HeaderComponent';
-// import FooterComponent from './components/footer/FooterComponent';
-// import ParserSettingsFormComponent from './components/parserComponents/ParserSettingsFormComponent';
-// import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import NavigationBar from './components/NavigationBar';
+import './App.css'
+import ListParserResultsComponent from './components/parserComponents/ListParserResultsComponent';
+import HeaderComponent from './components/header/HeaderComponent';
+import FooterComponent from './components/footer/FooterComponent';
+import ParserSettingsFormComponent from './components/parserComponents/ParserSettingsFormComponent';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (

@@ -1,20 +1,38 @@
 @font-face {
-  font-family: 'Eight Bits';
+  font-family: 'Epilepsy Sans Bold';
   font-style: normal;
   font-weight: 400;
-  src: local('Eight Bits'), local('EightBits-Regular'),
-       url(./assets/EightBits.ttf) format('truetype');
+  src: local('Epilepsy Sans Bold'), 
+       url(../../fonts/EpilepsySansBold.ttf) format('woff2'),
+       url(../../fonts/EpilepsySansBold.ttf) format('woff');
+}
+
+@font-face {
+  font-family: 'Epilepsy Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Epilepsy Sans'), 
+       url(../../fonts/EpilepsySans.ttf) format('woff2'),
+       url(../../fonts/EpilepsySans.ttf) format('woff');
 }
 
 .navbar {
   background-color: #ffc107;
 }
 
-.navbar-brand, .navbar-nav a {
+.navbar-brand, .navbar-nav a, .nav-item {
   color: #000; 
-  font-family: 'Eight Bits', sans-serif;
+  font-family: 'Epilepsy Sans', sans-serif;
+}
+
+.navbar-nav a:hover, .nav-item a:hover {
+  color: rgb(110, 110, 110);
 }
 
 .navbar-toggler-icon {
   background-color: #000; 
+}
+
+.nav-item {
+  font-size: 20px;
 }
