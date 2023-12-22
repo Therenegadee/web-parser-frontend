@@ -1,0 +1,44 @@
+/* .error-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #dc3545;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    animation: slideIn 0.5s ease-in-out;
+  
+    @keyframes slideIn {
+      from {
+        transform: translateY(-100%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+  }
+  
+   */
+
+   .error-message {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(220, 53, 69, 0.8);
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    animation: fadeInOut 0.5s ease-in-out;
+  
+    @keyframes fadeInOut {
+      0%, 100% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+  }

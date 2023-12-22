@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import './ParserSettingsFormStyle.css';
+import '../styles/Error.css'
 
 const ElementLocator = ({ element, index, handleRemoveElement, handleInputChange }) => {
   return (
     <div className='element-locator'>
       <span>{`Элемент парсинга №${index + 1}`}</span>
-      <button type='button' onClick={() => handleRemoveElement(index)} className='delete-btn'></button>
+        <button type='button' onClick={() => handleRemoveElement(index)} className='delete-btn'></button>
       <div className='elmnt-lctr-form-input'>
         <input
           type='text'
@@ -63,6 +64,7 @@ const ParserSettingsFormComponent = () => {
     outputFileType: '',
   });
 
+
   const handleInputChange = (event, index) => {
     const { name, value } = event.target;
     const updatedElementLocators = [...parserSettings.elementLocators];
@@ -89,20 +91,36 @@ const ParserSettingsFormComponent = () => {
     });
   };
 
-  const handleRemoveElement = (index) => {
-    const updatedElementLocators = [...parserSettings.elementLocators];
-    updatedElementLocators.splice(index, 1);
+  const [error, setError] = useState(null);
 
-    setParserSettings({
-      ...parserSettings,
-      elementLocators: updatedElementLocators,
-    });
+  const handleCloseError = () => {
+    setError(null);
   };
+
+  const handleRemoveElement = (index) => {
+    if (parserSettings.elementLocators.length === 1) {
+      setError("Нельзя удалить единственный элемент парсинга.");
+      setTimeout(() => {
+        setError(null);
+      }, 3000);
+    } else {
+      const updatedElementLocators = [...parserSettings.elementLocators];
+      updatedElementLocators.splice(index, 1);
+
+      setParserSettings({
+        ...parserSettings,
+        elementLocators: updatedElementLocators,
+      });
+    }
+  };
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log('Отправка данных:', parserSettings);
   };
+
+  const isCreatePresetDisabled = parserSettings.elementLocators.length === 1;
 
   return (
     <div className='container-parser'>
@@ -195,14 +213,16 @@ const ParserSettingsFormComponent = () => {
                   Добавить элемент парсинга
                 </button>
               </div>
-              {/* <div className='button'>
-                <button type='submit'>Создать пресет</button>
-              </div> */}
+              {error && (
+                <div className='error-message' onClick={handleCloseError}>
+                  {error}
+                </div>
+              )}
             </form>
           </div>
         </div>
         <div className='button-container'>
-          <button type='submit' className='create-preset-btn'>
+          <button type='submit' className='create-preset-btn' disabled={isCreatePresetDisabled}>
             Создать пресет
           </button>
         </div>
