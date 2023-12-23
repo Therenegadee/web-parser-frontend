@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import './ParserSettingsFormStyle.css';
 import '../styles/Error.css'
+import crossIcon from '../../assets/icons/service/minus-box.svg';
 
 const ElementLocator = ({ element, index, handleRemoveElement, handleInputChange }) => {
   return (
     <div className='element-locator'>
       <span>{`Элемент парсинга №${index + 1}`}</span>
-        <button type='button' onClick={() => handleRemoveElement(index)} className='delete-btn'></button>
+        <button className='delete-btn' type='button' onClick={() => handleRemoveElement(index)}>
+          <img src={crossIcon} alt='Delete'/>
+        </button>
       <div className='elmnt-lctr-form-input'>
         <input
           type='text'

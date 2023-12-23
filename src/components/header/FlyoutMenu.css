@@ -1,0 +1,85 @@
+.flyout-menu-container {
+    position: relative;
+  }
+  
+  .flyout-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 300px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .flyout-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .flyout-menu-element {
+    margin-bottom: 10px;
+  }
+
+    .flyout-menu-element a {
+      text-decoration: none;
+      color: #333; 
+      font-size: 20px;
+      /* display: block; */
+      display: flex;
+      align-items: center;
+    }
+    
+    .flyout-menu-element a:hover {
+      color: #ff6a00;
+    }
+
+    .flyout-menu-element img {
+      height: 30px;
+      /* filter: brightness(0) invert(1); */
+    }
+
+    .flyout-menu-element-icon {
+      margin-right: 5px; 
+      margin-top: 0px;
+    }
+
+.menu-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+  
+  .menu-button img {
+    fill: #363437;
+    height: 30px; 
+    width: 30px;
+    margin-right: 5px; 
+  }
+
+  .menu-button:hover {
+    
+  }
+
+  .login-button {
+    font-family: 'Epilepsy Sans', serif;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .login-button:hover {
+    color: #ff6a00;
+  }
+  

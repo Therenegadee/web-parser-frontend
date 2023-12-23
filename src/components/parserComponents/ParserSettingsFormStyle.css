@@ -30,12 +30,12 @@
   border-radius: 5px;
   margin-top: 10px;
   display: inline-block;
-  font-family: 'Epilepsy Sans', sans-serif
+  font-family: 'Epilepsy Sans Bold', sans-serif;
 }
 
-button:hover {
+/* button:hover {
   background-color: #ffc107;
-}
+} */
 
 .button-container {
   display: flex;
@@ -88,15 +88,22 @@ button:hover {
   display: inline-block;
   margin-right: 10px;
   margin-left: 10px;
-  border: 1px solid #000;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  /* border: 1px solid #000;
   width: 16px;
   height: 16px;
-  background: url('https://cdn.icon-icons.com/icons2/2131/PNG/512/cancel_cross_delete_remove_icon_131554.png') no-repeat center center / contain;
+  background: url('https://cdn.icon-icons.com/icons2/2131/PNG/512/cancel_cross_delete_remove_icon_131554.png') no-repeat center center / contain; */
 }
 
-.delete-btn:hover {
-  background-color: #ffc107; 
-  color: #000;
+.delete-btn img {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 2px;
+  transition: filter 0.3s ease;
 }
 
 .element-locator {
@@ -115,6 +122,7 @@ button:hover {
 
 .element-locator span {
   margin-right: 5px;
+  font-family: 'Epilepsy Sans Bold', sans-serif;
 }
 
 .form {

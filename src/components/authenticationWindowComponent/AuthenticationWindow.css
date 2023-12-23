@@ -1,0 +1,79 @@
+@font-face {
+  font-family: 'Epilepsy Sans Bold';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Epilepsy Sans Bold'), 
+       url(../../fonts/EpilepsySansBold.ttf) format('woff2'),
+       url(../../fonts/EpilepsySansBold.ttf) format('woff');
+}
+
+@font-face {
+  font-family: 'Epilepsy Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Epilepsy Sans'), 
+       url(../../fonts/EpilepsySans.ttf) format('woff2'),
+       url(../../fonts/EpilepsySans.ttf) format('woff');
+}
+
+.authentication-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+.authentication-window {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  position: relative;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 100%;
+  }
+  
+  .authentication-window h2 {
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Epilepsy Sans Bold', serif;
+  }
+  
+  .authentication-window label {
+    display: block;
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: 'Epilepsy Sans', serif;
+  }
+  
+  .authentication-window input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+  }
+  
+  .authentication-window button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #ffc107;
+    color: #363437;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .authentication-window button:hover {
+    background-color: #ffdb58;
+  }
+  

@@ -1,10 +1,11 @@
-import React from 'react';
-import logo from '../../assets/dh.svg';
+import React, { useState } from 'react';
+import logo from '../../assets/logos/dh.svg';
 import './Header.css';
-import profileLogo from '../../assets/skull-svgrepo-com.svg'
 import { Link } from 'react-router-dom';
+import FlyoutMenuComponent from './FlyoutMenuComponent';
 
 const HeaderComponent = () => {
+
   return (
     <header>
       <nav className='navbar navbar-expand-lg navbar-dark' style={{ backgroundColor: '#ffc107' }}>
@@ -25,23 +26,30 @@ const HeaderComponent = () => {
           </button>
           <div className='collapse navbar-collapse' id='navbarNav'>
             <ul className='navbar-nav ml-auto'>
-              <li className='nav-item'>
-                <a className='nav-link' href='/how-to-start'>
+              <li>
+                <Link className='nav-link' to='/how-to-start'>
                   Как начать
-                </a>
+                </Link>
               </li>
-              <li className='nav-item'>
-                <a className='nav-link' href='/about'>
+              <li>
+                <Link className='nav-link' to='/about'>
                   О проекте
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
-          <div className='nav-item'>
-            <a className='nav-link' href='/profile'>
-              <img src={profileLogo} alt='Profile Logo' style={{ height: '30px' }}/>
-            </a>
-          </div>
+          <ul className='navbar-nav'>
+            <li>
+              {/* <Link className='nav-link' to='/profile'>
+                <img
+                  src={profileIcon}
+                  alt='Profile Icon'
+                  style={{ height: '30px' }}
+                />
+              </Link> */}
+              <FlyoutMenuComponent isLoggedIn={false} />
+            </li>
+          </ul>
         </div>
       </nav>
     </header>
@@ -49,3 +57,4 @@ const HeaderComponent = () => {
 }
 
 export default HeaderComponent;
+

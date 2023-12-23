@@ -1,7 +1,7 @@
 import React from 'react'
 import './Footer.css'
-import githubIcon from '../../assets/github-mark.svg';
-import tgIcon from '../../assets/telegram-mark.svg';
+import githubIcon from '../../assets/social-contacts/github-mark.svg';
+import tgIcon from '../../assets/social-contacts/telegram-mark.svg';
 
 const FooterComponent = () => {
   return (

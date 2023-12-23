@@ -20,19 +20,27 @@
   background-color: #ffc107;
 }
 
-.navbar-brand, .navbar-nav a, .nav-item {
+.navbar-nav {
   color: #363437; 
-  font-family: 'Epilepsy Sans', sans-serif;
+  transition: color 0.3s;
 }
 
-.navbar-nav a:hover, .nav-item a:hover {
-  color: rgb(255, 106, 0);
+ .navbar-nav a {
+  color: currentColor;
+  font-family: 'Epilepsy Sans', sans-serif;
+  font-size: 20px;
 }
+
+  .navbar-nav img {
+  fill: currentColor;
+  color: currentColor;
+  height: 30px;
+  }
+
+  .navbar-nav a:hover {
+  color: rgb(255, 106, 0);
+  }
 
 .navbar-toggler-icon {
   background-color: #363437; 
-}
-
-.nav-item {
-  font-size: 20px;
 }
