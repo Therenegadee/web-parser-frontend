@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Header.css'
 import './FlyoutMenu.css'
 import menuIcon from '../../assets/icons//toggle-menu/menu-bar.svg'
-import profileIcon from '../../assets/icons/toggle-menu/account.svg'
+import profileIcon from '../../assets/icons/toggle-menu/account-skull.svg'
 import mineIcon from '../../assets/icons/toggle-menu/mine.svg'
 import historyIcon from '../../assets/icons/toggle-menu/history.svg'
 import loginIcon from '../../assets/icons/toggle-menu/login.svg'
@@ -73,14 +73,14 @@ const FlyoutMenuComponent = ({isLoggedIn}) => {
             </>
             ) : (
               <li className="flyout-menu-element">
-                <button className="login-button" onClick={openLoginForm}>
+                <span className="login-element" onClick={openLoginForm}>
                 <img 
                   className='flyout-menu-element-icon' 
                   src={loginIcon} alt="Login Icon" 
                   style={{height: '27px'}}
                 />
                   Войти / Зарегистрироваться
-                </button>
+                </span>
               </li>
             )}
           </ul>

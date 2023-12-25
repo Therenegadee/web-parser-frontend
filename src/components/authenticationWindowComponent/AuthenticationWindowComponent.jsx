@@ -46,7 +46,7 @@ useEffect(() => {
                 onChange={(e) => setPassword(e.target.value)} 
                 />
             <Link to="/recovery-password" style={{ fontSize: '15px' }}>Забыли пароль?</Link>
-            <button onClick={handleLogin}>Войти</button>
+            <button onClick={handleLogin} style={{fontFamily: 'Epilepsy Sans Bold'}}>Войти</button>
         </div>
     </div>
   );
