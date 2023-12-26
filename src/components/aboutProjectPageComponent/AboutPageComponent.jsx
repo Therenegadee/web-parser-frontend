@@ -20,6 +20,11 @@ const storiesData = [
     text: 'Ochumet',
     imgUrl: 'https://s3.cointelegraph.com/storage/uploads/view/0bd13cdf67395593f39ae8371eb8b8a3.png',
   },
+  {
+    id: 4,
+    text: 'Ochumet',
+    imgUrl: 'https://s3.cointelegraph.com/storage/uploads/view/5666076a897a5991c032faec8c7af3a4.png',
+  },
 ];
 
 const AboutPage = () => {
@@ -37,8 +42,37 @@ const AboutPage = () => {
     setCurrentStory(index);
   };
 
+
+  const TextBlock = () => {
+    return (
+      <div className="full-background-text-block">
+        <h3>
+          Встречайте Data Harvest
+        </h3>
+        <h1>
+          ПРОЕКТ ПРО ДОСТУПНОСТЬ ВЕБ-ДАННЫХ ДЛЯ ВАШИХ ЦЕЛЕЙ
+        </h1>
+      </div>
+    );
+  };
+
   return (
+    <>
+    <div className='body'>
+      <TextBlock />
+    </div>
     <div className="about-page">
+        <div className="about-text">
+            <h1>
+                <img src={targetIcon} alt="Target Icon" className="icon" />
+                Цель проекта
+            </h1>
+                <p>
+                Данный проект был создан для того, чтобы дать возможность людям,
+                не имеющим навыков программирования, собирать данные с веб-сайтов
+                для их целей (коммерческих, исследовательских, личных и т.д.)
+                </p>
+        </div>
         <div className="about-text">
             <h1>
                 <img src={targetIcon} alt="Target Icon" className="icon" />
@@ -77,6 +111,7 @@ const AboutPage = () => {
          </button>
       </div>
     </div>
+    </>
   );
 };
 
