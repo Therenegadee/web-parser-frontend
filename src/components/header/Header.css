@@ -18,6 +18,8 @@
 
 .navbar {
   background-color: #ffc107;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
 }
 
 .navbar-nav {
@@ -37,10 +39,16 @@
   height: 30px;
   }
 
-  .navbar-nav a:hover {
+  .navbar-nav li a:focus, .navbar-nav a:hover {
   color: rgb(255, 106, 0);
   }
 
 .navbar-toggler-icon {
   background-color: #363437; 
+}
+
+.navbar-gif {
+  height: 30px;
+  filter: invert(18%) sepia(6%) saturate(363%) hue-rotate(236deg) brightness(100%) contrast(92%);
+  margin-top: 3px;
 }

@@ -156,6 +156,7 @@ const AuthenticationWindowComponent = ({ onClose }) => {
                 value={registrationPassword}
                 onChange={(e) => setRegistrationPassword(e.target.value)}
               />
+              <h3 style={{ fontSize: '15px', fontFamily: 'Epilepsy Sans',  opacity: '0.7' }}>Пароль должен содержать: </h3>
               <button onClick={handleRegister} className="action-button">
                 Зарегистрироваться
               </button>

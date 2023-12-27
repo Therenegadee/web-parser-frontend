@@ -1,6 +1,62 @@
-.body-home {
-    background-color: #f1f1f1;
-    min-height: 100vh;
+.welcome-block {
+    background-color: #ffc107;
+    background-size: cover;
+    background-position: center center;
+    background-size: auto 280%;
+    background-repeat: no-repeat;
+    padding: 80px 20px;
+  }
+
+  .welcome-block h1, .welcome-block h4 {
+    color: #363437;
+    text-align: center;
+  }
+
+  .welcome-block h1 {
+    font-family: 'Epilepsy Sans Bold', sans-serif;
+    font-size: 60px;
+  }
+
+  .welcome-block h4 {
+    font-family: 'Epilepsy Sans', sans-serif;
+    font-size: 40px;
+  }
+
+  .home-page-block {
     display: flex;
+    min-height: 100vh;
     flex-direction: column;
-}
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .block-text {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 1200px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  
+  .block-text h1 {
+    font-family: 'Epilepsy Sans Bold', sans-serif;
+    color: #363437;
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .block-text p {
+    font-family: 'Epilepsy Sans', sans-serif;
+    color: #363437;
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  .icon {
+    height: 40px;
+    margin-right: 10px;
+    filter: invert(77%) sepia(27%) saturate(3341%) hue-rotate(353deg) brightness(107%) contrast(103%);
+  }

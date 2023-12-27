@@ -71,8 +71,6 @@
     text-align: center;
     cursor: pointer;
     border: none;
-    border: 1px solid #ccc;
-    background-color: #ddd;
   }
   
   .authentication-window .tab-button.active {
@@ -83,11 +81,15 @@
     width: 100%;
     padding: 10px;
     margin-top: 10px;
-    background-color: #eee;
     color: #363437;
-    border: 1px solid #bbb;
     border-radius: 4px;
     cursor: pointer;
+  }
+
+  .authentication-window .action-button, .authentication-window .tab-button {
+    background-color: #eee;
+    border: 1px solid #bbb;
+    font-family: 'Epilepsy Sans Bold', serif;
   }
   
   .authentication-window .action-button:hover {
