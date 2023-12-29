@@ -62,7 +62,7 @@ const HeaderComponent = () => {
                   style={{ height: '30px' }}
                 />
               </Link> */}
-              <FlyoutMenuComponent isLoggedIn={false} />
+              <FlyoutMenuComponent isLoggedIn={true} />
             </li>
           </ul>
         </div>

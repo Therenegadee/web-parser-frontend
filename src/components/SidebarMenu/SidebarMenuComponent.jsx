@@ -46,7 +46,7 @@ const SidebarMenuComponent = ({ activeTab, onTabClick }) => {
   };
 
   return (
-    <div className="menu">
+    <div className="sidebar-menu">
       <div className="profile-info">
         {profileData && iconPath && (
           <>
@@ -63,21 +63,21 @@ const SidebarMenuComponent = ({ activeTab, onTabClick }) => {
 
       <Link
         to="/projects"
-        className={`menu-item ${activeTab === 'projects' ? 'active' : ''}`}
+        className={`sidebar-menu-item ${activeTab === 'projects' ? 'active' : ''}`}
       >
         Проекты
       </Link>
 
       <Link
         to="/settings"
-        className={`menu-item ${activeTab === 'settings' ? 'active' : ''}`}
+        className={`sidebar-menu-item ${activeTab === 'settings' ? 'active' : ''}`}
       >
         Настройки
       </Link>
 
       <Link
         to="/help"
-        className={`menu-item ${activeTab === 'help' ? 'active' : ''}`}
+        className={`sidebar-menu-item ${activeTab === 'help' ? 'active' : ''}`}
       >
         Помощь
       </Link>

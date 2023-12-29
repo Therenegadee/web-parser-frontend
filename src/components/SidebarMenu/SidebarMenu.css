@@ -1,13 +1,13 @@
 
-  .menu {
+  .sidebar-menu {
     width: 300px;
     background-color: #ffc107;
     display: flex;
     flex-direction: column;
   }
   
-  .menu-item {
-    color: #333;
+  .sidebar-menu-item {
+    color: #363437;
     font-family: 'Epilepsy Sans Bold', sans-serif;
     font-size: 18px;
     padding: 10px;
@@ -15,12 +15,12 @@
     transition: background-color 0.3s ease;
   }
   
-  .menu-item:hover,
-  .menu-item.active {
+  .sidebar-menu-item:hover,
+  .sidebar-menu-item.active {
     background-color: rgb(255, 106, 0);
   }
   
-  .menu-item.active {
+  .sidebar-menu-item.active {
     width: 100%;
   }
   
@@ -42,6 +42,7 @@
     align-items: center;
     justify-content: center;
     margin-right: 10px;
+    filter: invert(18%) sepia(6%) saturate(363%) hue-rotate(236deg) brightness(100%) contrast(92%);
   }
   
   .profile-info img {
@@ -59,9 +60,14 @@
   }
   
   .profile-name {
-    font-weight: bold;
+    font-family: 'Epilepsy Sans Bold', sans-serif;
+    margin-bottom: -5%;
+    font-size: 25px;
+    color: #363437;
   }
   
   .profile-status {
-    color: #777;
+    font-family: 'Epilepsy Sans', sans-serif;
+    font-size: 17px;
+    opacity: 0.7;
   }

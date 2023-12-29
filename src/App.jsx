@@ -20,7 +20,7 @@ function App() {
             <Route path="/" element={<HomePageComponent />}/>
             <Route path='/about' element={<AboutPageComponent />}/>
             <Route path='/parser/results' element = {<ListParserResultsComponent />} /> 
-            <Route path='/parser/create' element = {<ParserSettingsFormComponent />} />
+            <Route path='/projects/create' element = {<ParserSettingsFormComponent />} />
             <Route path='/settings' element= {<SettingsComponent />} />
             <Route path='/projects' element= {<ProjectComponent />} />
             <Route path='/help' element= {<HelpComponent />} />

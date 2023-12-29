@@ -1,6 +1,62 @@
 .projects-page {
     display: flex;
-    max-width: 1200px;
     min-height: 100vh;
     z-index: 998;
-}
+    position: relative;
+  }
+  
+  .project-info {
+    flex: 1;
+    padding: 20px;
+    position: relative;
+    border: 1px solid #ddd;
+  }
+  
+  .header-container {
+    font-family: 'Epilepsy Sans Bold', 'sans-serif';
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  /* table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  table,
+  th,
+  td {
+    border: 1px solid #ddd;
+  }
+  
+  th,
+  td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    font-family: 'Epilepsy Sans Bold', 'sans-serif';
+  }
+
+  td {
+    font-family: 'Epilepsy Sans', 'sans-serif';
+  }
+  
+  tbody tr:hover {
+    background-color: #f5f5f5;
+    cursor: pointer;
+  } */
+  
+
+  
+
+
+
+  
