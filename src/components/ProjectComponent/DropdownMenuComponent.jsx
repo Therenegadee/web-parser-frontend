@@ -1,29 +1,40 @@
 import React, { useState } from 'react';
 import './DropdownMenu.css'
 import addIcon from '../../assets/icons/service/plus-box.svg'
+import addIconHovered from '../../assets/icons/service/plus-box-fill.svg'
 import mineIcon from '../../assets/icons/projects/mining-icon.svg'
 import folderPlusIcon from '../../assets/icons/projects/folder-plus.svg'
 import { Link } from 'react-router-dom';
 
 const DropdownMenuComponent = () => {
   const [menuVisible, setMenuVisible] = useState(false);
+  const [hovered, setHovered] = useState(false);
+  const [buttonPressed, setButtonPressed] = useState(false);
 
   const handleCreateFolder= () => {
   };
 
   const toggleMenu = () => {
     setMenuVisible(!menuVisible);
+    setButtonPressed(!buttonPressed)
   };
 
   const closeMenu = () => {
     setMenuVisible(false);
+    setButtonPressed(!buttonPressed)
   };
 
   return (
     <div className="menu-container">
-      <button className="menu-button" onClick={toggleMenu}>
+      <button 
+        className="menu-button" 
+        onClick={toggleMenu}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
         <img 
-            src={addIcon} 
+            src={buttonPressed ? addIconHovered : (hovered ? addIconHovered : addIcon)}
+            alt="Menu Icon"
         />
       </button>
       {menuVisible && (

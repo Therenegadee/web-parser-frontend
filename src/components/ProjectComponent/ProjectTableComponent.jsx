@@ -63,43 +63,41 @@ const ProjectTableComponent = ({ items, handleItemClick }) => {
     }
   };
 
+  const renderItems = (items, level = 0) => {
+    return items.map((item) => (
+      <React.Fragment key={item.id}>
+        {/* <tr onClick={() => toggleFolder(item.id)}> */}
+        <tr onClick={() => (item.items ? toggleFolder(item.id) : handleItemClick(item))}>
+          <td style={{ paddingLeft: `${20 + level * 10}px` }} >
+            {item.items ? (
+              <img src={folderIcon} alt="Folder Icon" className="table-icon" />
+            ) : (
+              <img src={mineIcon} alt="Mining Icon" className="table-icon" />
+            )}
+            {item.name}
+          </td>
+          <td>Тэги {item.name.toLowerCase()}</td>
+          <td>{item.items ? 'Папка' : 'Парсинг'}</td>
+        </tr>
+        {expandedItems.includes(item.id) && item.items && (
+          <React.Fragment>{renderItems(item.items, level + 1)}</React.Fragment>
+        )}
+      </React.Fragment>
+    ));
+  };
+
   return (
     <table>
       <thead>
         <tr>
-          <th></th>
           <th>Имя</th>
           <th>Тэги</th>
           <th>Тип</th>
         </tr>
       </thead>
-      <tbody>
-        {items.map((item) => (
-          <React.Fragment key={item.id}>
-            <tr onClick={() => toggleFolder(item.id)}>
-              <td className='icon-cell'>
-                <img src={folderIcon} alt="Folder Icon" className="table-icon" />
-              </td>
-              <td>{item.name}</td>
-              <td>Тэги {item.name.toLowerCase()}</td>
-              <td>Папка</td>
-            </tr>
-            {expandedItems.includes(item.id) &&
-              item.items &&
-              item.items.map((subItem) => (
-                <tr key={subItem.id} onClick={() => handleItemClick(subItem)}>
-                  <td className='icon-cell'>
-                    <img src={mineIcon} alt="Mining Icon" className="table-icon" />
-                  </td>
-                  <td>{subItem.name}</td>
-                  <td>Тэги {subItem.name.toLowerCase()}</td>
-                  <td>Парсинг</td>
-                </tr>
-              ))}
-          </React.Fragment>
-        ))}
-      </tbody>
+      <tbody>{renderItems(items)}</tbody>
     </table>
+
   );
 };
 

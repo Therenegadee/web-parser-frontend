@@ -26,4 +26,8 @@ table {
   .icon-cell {
     width: 20px;
   }
+
+  .indented-row {
+    margin-left: 20px;
+  }
   
