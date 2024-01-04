@@ -1,73 +1,72 @@
-
-  .sidebar-menu {
-    width: 300px;
-    background-color: #ffc107;
-    display: flex;
-    flex-direction: column;
-  }
+.sidebar-menu {
+  width: 300px;
+  background-color: var(--brand-color);
+  display: flex;
+  flex-direction: column;
+}
   
-  .sidebar-menu-item {
-    color: #363437;
-    font-family: 'Epilepsy Sans Bold', sans-serif;
-    font-size: 18px;
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
+.sidebar-menu-item {
+  color: var(--main-text-color);
+  font-family: var(--main-font-bold);
+  font-size: 18px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
   
-  .sidebar-menu-item:hover,
-  .sidebar-menu-item.active {
-    background-color: rgb(255, 106, 0);
-  }
+.sidebar-menu-item:hover,
+.sidebar-menu-item.active {
+  background-color: var(--hover-color);
+}
   
-  .sidebar-menu-item.active {
-    width: 100%;
-  }
+.sidebar-menu-item.active {
+  width: 100%;
+}
   
-  .profile-info {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
-  }
+.profile-info {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
   
-  .profile-icon-circle {
-    width: 65px;
-    height: 65px;
-    background: url('../../assets/icons/profile/profile-icon-border.svg') no-repeat;
-    background-size: cover;
-    border-radius: 50%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 10px;
-    filter: invert(18%) sepia(6%) saturate(363%) hue-rotate(236deg) brightness(100%) contrast(92%);
-  }
+.profile-icon-circle {
+  width: 65px;
+  height: 65px;
+  background: url('../../assets/icons/profile/profile-icon-border.svg') no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  filter: invert(18%) sepia(6%) saturate(363%) hue-rotate(236deg) brightness(100%) contrast(92%);
+}
   
-  .profile-info img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%; 
-    z-index: 1;
-  }
+.profile-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; 
+  z-index: 1;
+}
   
   
-  .profile-details {
-    margin-left: 5%;
-    display: flex;
-    flex-direction: column;
-  }
+.profile-details {
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+}
   
-  .profile-name {
-    font-family: 'Epilepsy Sans Bold', sans-serif;
-    margin-bottom: -5%;
-    font-size: 25px;
-    color: #363437;
-  }
+.profile-name {
+  font-family: var(--main-font-bold);
+  margin-bottom: -5%;
+  font-size: 25px;
+  color: var(--main-text-color);
+}
   
-  .profile-status {
-    font-family: 'Epilepsy Sans', sans-serif;
-    font-size: 17px;
-    opacity: 0.7;
-  }
+.profile-status {
+  font-family: var(--main-font);
+  font-size: 17px;
+  opacity: 0.7;
+}

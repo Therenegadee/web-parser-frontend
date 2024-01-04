@@ -1,35 +1,17 @@
-@font-face {
-  font-family: 'Epilepsy Sans Bold';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Epilepsy Sans Bold'), 
-       url(../../fonts/EpilepsySansBold.ttf) format('woff2'),
-       url(../../fonts/EpilepsySansBold.ttf) format('woff');
-}
-
-@font-face {
-  font-family: 'Epilepsy Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Epilepsy Sans'), 
-       url(../../fonts/EpilepsySans.ttf) format('woff2'),
-       url(../../fonts/EpilepsySans.ttf) format('woff');
-}
-
 .navbar {
-  background-color: #ffc107;
+  background-color: var(--main-background-color);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
 
 .navbar-nav {
-  color: #363437; 
+  color: var(--main-text-color); 
   transition: color 0.3s;
 }
 
  .navbar-nav a {
   color: currentColor;
-  font-family: 'Epilepsy Sans', sans-serif;
+  font-family: var(--main-font);
   font-size: 20px;
 }
 
@@ -40,11 +22,11 @@
   }
 
   .navbar-nav li a:focus, .navbar-nav a:hover {
-  color: rgb(255, 106, 0);
+  color: var(--hover-color);
   }
 
 .navbar-toggler-icon {
-  background-color: #363437; 
+  background-color: var(--main-text-color); 
 }
 
 .navbar-gif {

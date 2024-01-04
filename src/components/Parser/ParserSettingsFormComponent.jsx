@@ -51,6 +51,7 @@ const ElementLocator = ({ element, index, handleRemoveElement, handleInputChange
 
 const ParserSettingsFormComponent = () => {
   const [parserSettings, setParserSettings] = useState({
+    name: '',
     firstPageUrl: '',
     numOfPagesToParse: '',
     className: '',
@@ -135,6 +136,16 @@ const ParserSettingsFormComponent = () => {
               <div className='form-group'>
                 <h4 className='form-label'>Основные Настройки</h4>
                 <div className='form-input'>
+                <label className='form-input-label'>
+                  URL первой страницы
+                  <input
+                    type='text'
+                    name='name'
+                    value={parserSettings.name}
+                    placeholder='Название проекта'
+                    onChange={(e) => setParserSettings({ ...parserSettings, name: e.target.value })}
+                  />
+                </label>
                 <label className='form-input-label'>
                   URL первой страницы
                   <input

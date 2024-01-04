@@ -1,12 +1,13 @@
-import HomePageComponent from './components/homePageComponent/HomePageComponent'
-import ListParserResultsComponent from './components/parserComponents/ListParserResultsComponent';
-import HeaderComponent from './components/header/HeaderComponent';
-import FooterComponent from './components/footer/FooterComponent';
-import AboutPageComponent from './components/aboutProjectPageComponent/AboutPageComponent';
-import ParserSettingsFormComponent from './components/parserComponents/ParserSettingsFormComponent';
-import ProjectComponent from './components/ProjectComponent/ProjectComponent'
-import HelpComponent from './components/HelpComponent/HelpComponent'
-import SettingsComponent from './components/SettingsComponent/SettingsComponent'
+import HomePageComponent from './components/Home/HomePageComponent'
+import ListParserResultsComponent from './components/Parser/ListParserResultsComponent';
+import HeaderComponent from './components/Header/HeaderComponent';
+import FooterComponent from './components/Footer/FooterComponent';
+import AboutPageComponent from './components/About/AboutPageComponent';
+import ParserSettingsFormComponent from './components/Parser/ParserSettingsFormComponent';
+import ProjectComponent from './components/Project/ProjectComponent'
+import HelpComponent from './components/Help/HelpComponent'
+import SettingsComponent from './components/Settings/SettingsComponent'
+import './styles/Variables.css'
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 

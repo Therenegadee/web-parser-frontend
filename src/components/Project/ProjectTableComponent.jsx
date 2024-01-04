@@ -68,7 +68,7 @@ const ProjectTableComponent = ({ items, handleItemClick }) => {
       <React.Fragment key={item.id}>
         {/* <tr onClick={() => toggleFolder(item.id)}> */}
         <tr onClick={() => (item.items ? toggleFolder(item.id) : handleItemClick(item))}>
-          <td style={{ paddingLeft: `${20 + level * 10}px` }} >
+          <td style={{ paddingLeft: `${0 + level * 20}px` }} >
             {item.items ? (
               <img src={folderIcon} alt="Folder Icon" className="table-icon" />
             ) : (

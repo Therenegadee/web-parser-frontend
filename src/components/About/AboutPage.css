@@ -9,7 +9,7 @@
   padding: 20px;
 }
 .about-text {
-  background-color: #fff;
+  background-color: var(--main-background-color);
   border-radius: 10px; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   padding: 20px; 
@@ -20,14 +20,14 @@
 
 
 .about-text h1 {
-    font-family: 'Epilepsy Sans Bold', sans-serif;
+    font-family: var(--main-font-bold);
     color: #363437;
     font-size: 40px;
     margin-bottom: 20px;
   }
 
 .about-text p {
-    font-family: 'Epilepsy Sans', sans-serif;
+    font-family: var(--main-font);
     color: #363437;
     font-size: 20px;
     line-height: 1.5;
@@ -107,7 +107,7 @@
 
 .left-arrow img:hover,
 .right-arrow img:hover {
-  background-color: #ffc107;
+  background-color: var(--brand-color);
 }
 
 .prev-story,
@@ -158,12 +158,12 @@
   background-size: cover;
   width: 100%;
   height: 100%;
-  background-color: #ffc107;
+  background-color: var(--brand-color);
   text-align: center;
 }
 
 .full-background-text-block h1 {
-  font-family: 'Epilepsy Sans', sans-serif;
+  font-family: var(--main-font);
   color: #363437;
   font-size: 60px;
   padding-left: 20%;
@@ -172,16 +172,10 @@
 }
 
 .full-background-text-block h3 {
-  font-family: 'Epilepsy Sans Bold', sans-serif;
+  font-family: var(--main-font-bold);
   color: #363437;
   font-size: 30px; 
   padding-left: 20%;
   padding-right: 20%;
   padding-top: 10%;
 }
-/* .full-background-text-block p {
-  font-family: 'Epilepsy Sans', sans-serif;
-  font-size: 24px; 
-  line-height: 1.5;
-  margin-bottom: 20px;
-} */

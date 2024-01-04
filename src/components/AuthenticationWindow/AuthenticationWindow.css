@@ -28,14 +28,14 @@
   .authentication-window h2 {
     text-align: center;
     font-size: 30px;
-    font-family: 'Epilepsy Sans Bold', serif;
+    font-family: var(--main-font-bold);
   }
   
   .authentication-window label {
     display: block;
     margin-top: 10px;
     font-size: 20px;
-    font-family: 'Epilepsy Sans', serif;
+    font-family: var(--main-font);
   }
   
   .authentication-window input {
@@ -48,17 +48,13 @@
     width: 100%;
     padding: 10px;
     margin-top: 10px;
-    background-color: #ffc107;
-    color: #363437;
+    background-color: var(--brand-color);
+    color: var(--main-text-color);
     border: none;
     border-radius: 4px;
     cursor: pointer;
   }
-  
-  .authentication-window button:hover {
-    background-color: #ffdb58;
-  }
-  
+
   .authentication-window .tab-buttons {
     display: flex;
     margin-bottom: 20px;
@@ -81,18 +77,22 @@
     width: 100%;
     padding: 10px;
     margin-top: 10px;
-    color: #363437;
+    color: var(--main-text-color);
     border-radius: 4px;
     cursor: pointer;
   }
 
   .authentication-window .action-button, .authentication-window .tab-button {
-    background-color: #eee;
+    background-color: var(--main-background-color);
     border: 1px solid #bbb;
-    font-family: 'Epilepsy Sans Bold', serif;
+    font-family: var(--main-font-bold);
   }
   
-  .authentication-window .action-button:hover {
-    background-color: #ffc107;
+  .authentication-window .action-button:hover, .authentication-window button:hover {
+    background-color: var(--brand-color);
   }
+  
+  /* .authentication-window button:hover {
+    background-color: #ffdb58;
+  } */
   

@@ -13,7 +13,7 @@
   }
   
   .header-container {
-    font-family: 'Epilepsy Sans Bold', 'sans-serif';
+    font-family: var(--main-font-bold);
     display: flex;
     justify-content: space-between;
     align-items: center;

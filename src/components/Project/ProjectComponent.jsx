@@ -13,7 +13,11 @@ const ProjectComponent = () => {
   const [selectedItem, setSelectedItem] = useState(null);
 
   const handleItemClick = (item) => {
-    setSelectedItem(item);
+    if (selectedItem && selectedItem.id === item.id) {
+      setSelectedItem(null);
+    } else {
+      setSelectedItem(item);
+    }
   };
 
   useEffect(() => {
@@ -28,7 +32,7 @@ const ProjectComponent = () => {
             userParserSettings: {
             "firstPageUrl": "https://zhongchou.modian.com/?_mpos=h_nav_discover",
             "numOfPagesToParse": 2,
-            "className": "pc_ga_pro_index_17",
+            "className": "pc_ga_pro_index_17", 
             "tagName": "a",
             "cssSelectorNextPage": ".next",
             "header": ["funds_raised", "people_support"],
@@ -209,7 +213,12 @@ const ProjectComponent = () => {
           <DropdownMenuComponent />
         </div>
         <ProjectTableComponent items={folders} handleItemClick={handleItemClick} />
-        {selectedItem && <ParsingPresetViewComponent itemData={selectedItem} />}
+        {selectedItem && 
+          <ParsingPresetViewComponent 
+            itemData={selectedItem} 
+            onClose={() => setSelectedItem(null)}
+          />
+        }
       </div>
     </div>
 );

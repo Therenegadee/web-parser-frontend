@@ -1,5 +1,5 @@
 .welcome-block {
-    background-color: #ffc107;
+    background-color: var(--brand-color);
     background-size: cover;
     background-position: center center;
     background-size: auto 280%;
@@ -8,17 +8,17 @@
   }
 
   .welcome-block h1, .welcome-block h4 {
-    color: #363437;
+    color: var(--main-text-color);
     text-align: center;
   }
 
   .welcome-block h1 {
-    font-family: 'Epilepsy Sans Bold', sans-serif;
+    font-family: var(--main-font-bold);
     font-size: 60px;
   }
 
   .welcome-block h4 {
-    font-family: 'Epilepsy Sans', sans-serif;
+    font-family: var(--main-font);
     font-size: 40px;
   }
 
@@ -41,15 +41,15 @@
   }
   
   .block-text h1 {
-    font-family: 'Epilepsy Sans Bold', sans-serif;
-    color: #363437;
+    font-family: var(--main-font-bold);
+    color: var(--main-text-color);
     font-size: 40px;
     margin-bottom: 20px;
   }
   
   .block-text p {
-    font-family: 'Epilepsy Sans', sans-serif;
-    color: #363437;
+    font-family: var(--main-font);
+    color: var(--main-text-color);
     font-size: 20px;
     line-height: 1.5;
     margin-bottom: 20px;

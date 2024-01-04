@@ -1,28 +1,10 @@
-@font-face {
-  font-family: 'Epilepsy Sans Bold';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Epilepsy Sans Bold'), 
-       url(../../fonts/EpilepsySansBold.ttf) format('woff2'),
-       url(../../fonts/EpilepsySansBold.ttf) format('woff');
-}
-
-@font-face {
-  font-family: 'Epilepsy Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Epilepsy Sans'), 
-       url(../../fonts/EpilepsySans.ttf) format('woff2'),
-       url(../../fonts/EpilepsySans.ttf) format('woff');
-}
-
 .footer {
   z-index: 999;
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #ffc107;
-  color: #000;
+  background-color: var(--brand-color);
+  color: var(--main-text-color);
   text-align: center;
   padding: 10px;
   display: flex;
@@ -38,16 +20,16 @@
   gap: 10px;
   margin-right: 50px;
   margin-left: 50px;
-  font-family: 'Epilepsy Sans', sans-serif;
+  font-family: var(--main-font);
 }
 
 .footer-section a {
   text-decoration: none;
-  color: #000;
+  color: var(--main-text-color);
 }
 
 .footer-section a:hover {
-  color: rgb(255, 106, 0);
+  color: var(--hover-color);
 }
 
 .github-icon {
@@ -55,6 +37,7 @@
   height: 20px;
   margin-right: 5px;
   margin-bottom: 5px;
+  fill: var(--main-text-color);
 }
 
 .tg-icon {
@@ -62,4 +45,5 @@
   height: 27px;
   margin-right: 3px;
   margin-bottom: 3px;
+  filter: invert(18%) sepia(6%) saturate(363%) hue-rotate(236deg) brightness(100%) contrast(92%);
 }

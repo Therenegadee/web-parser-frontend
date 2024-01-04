@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import './Header.css'
 import './FlyoutMenu.css'
 import menuIcon from '../../assets/icons//toggle-menu/menu-bar.svg'
-import profileIcon from '../../assets/icons/toggle-menu/account-skull.svg'
+import projectsIcon from '../../assets/icons/toggle-menu/bag.svg'
 import mineIcon from '../../assets/icons/toggle-menu/mine.svg'
-import historyIcon from '../../assets/icons/toggle-menu/history.svg'
+import settingsIcon from '../../assets/icons/toggle-menu/settings.svg'
 import loginIcon from '../../assets/icons/toggle-menu/login.svg'
-import AuthenticationWindowComponent from '../authenticationWindowComponent/AuthenticationWindowComponent';
+import AuthenticationWindowComponent from '../AuthenticationWindow/AuthenticationWindowComponent';
 import { Link } from 'react-router-dom';
 
-const FlyoutMenuComponent = ({isLoggedIn}) => {
+const FlyoutMenuComponent = ({ isLoggedIn }) => {
   const [menuVisible, setMenuVisible] = useState(false);
   const [showLoginForm, setShowLoginForm] = useState(false);
 
@@ -43,16 +43,16 @@ const FlyoutMenuComponent = ({isLoggedIn}) => {
           {isLoggedIn ? (
               <>
             <li className='flyout-menu-element'>
-              <Link to="/profile" onClick={closeMenu}>
+              <Link to="/projects" onClick={closeMenu}>
               <img 
                 className='flyout-menu-element-icon' 
-                src={profileIcon} alt="Profile" 
+                src={projectsIcon} alt="Projects" 
               />
-                Профиль
+                Проекты
               </Link>
             </li>
             <li className='flyout-menu-element'>
-              <Link to="/parser/create" onClick={closeMenu}>
+              <Link to="/projects/create" onClick={closeMenu}>
               <img 
                 className='flyout-menu-element-icon' 
                 src={mineIcon} alt="Mine Logo" 
@@ -64,10 +64,10 @@ const FlyoutMenuComponent = ({isLoggedIn}) => {
               <Link to="/parser/history" onClick={closeMenu}>
               <img 
                 className='flyout-menu-element-icon' 
-                src={historyIcon} alt="History of Parsing Logo" 
+                src={settingsIcon} alt="Settings" 
                 style={{height: '27px'}}
               />
-                История парсинга
+                Настройки
               </Link>
             </li>
             </>
