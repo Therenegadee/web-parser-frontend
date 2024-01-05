@@ -23,13 +23,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 2000;
   }
   
   .close-button {
     position: absolute;
     top: 0%;
-    right: 0%;
+    right: 2%;
     font-family: var(--main-font-bold);
     font-size: 24px;
     background: none;
@@ -84,9 +84,18 @@
     text-align: left;
     position: relative;
   }
+
+  .info-table th {
+    background-color: var(--brand-color); 
+  }
+
+  /* th + th {
+    border-left: 1px solid rgba(0, 0, 0, 0.1); 
+  } */
   
   .info-table td:not(:last-child)::after {
     content: '';
+    margin-left: 6px;
     display: block;
     height: 100%;
     width: 1px;
@@ -95,4 +104,3 @@
     right: 0;
     top: 0;
   }
-  

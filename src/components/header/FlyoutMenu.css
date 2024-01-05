@@ -22,6 +22,7 @@
 
   .flyout-menu-element {
     margin-bottom: 10px;
+    font-family: var(--main-font);
   }
 
     .flyout-menu-element a {

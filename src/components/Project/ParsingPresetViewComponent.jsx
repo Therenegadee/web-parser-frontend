@@ -1,9 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
+import xlsxIcon from '../../assets/icons/projects/xlsx.svg'
+import csvIcon from '../../assets/icons/projects/csv.svg'
+import mineIcon from '../../assets/icons/projects/mining-icon.svg'
+
 import './ParsingPresetView.css';
 
 const ParsingPresetViewComponent = ({ itemData, onClose }) => {
   const [isPopupVisible, setPopupVisibility] = useState(true);
   const [expandedLocators, setExpandedLocators] = useState([]);
+  const [sortAsc, setSortAsc] = useState(true);
+
+
+
+  const sortedHistoryAsc = [...itemData.parsingHistory].sort((a, b) => new Date(a.date) - new Date(b.date));
+  const sortedHistoryDesc = [...itemData.parsingHistory].sort((a, b) => new Date(b.date) - new Date(a.date));
 
   const handleClosePopup = () => {
     setPopupVisibility(false);
@@ -18,6 +29,25 @@ const ParsingPresetViewComponent = ({ itemData, onClose }) => {
     });
   };
 
+  useEffect(() => {
+    document.body.style.overflow = isPopupVisible ? 'hidden' : 'auto';
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isPopupVisible]);
+
+  const formatDateTime = (dateTimeString) => {
+    const options = { day: 'numeric', month: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric' };
+    return new Date(dateTimeString).toLocaleDateString('ru-RU', options);
+  };
+
+  const downloadFile = (link) => {
+    const anchor = document.createElement('a');
+    anchor.href = link;
+    anchor.download = link.split('/').pop();
+    anchor.click();
+  };
+
   return (
     <div>
       {isPopupVisible && (
@@ -26,7 +56,10 @@ const ParsingPresetViewComponent = ({ itemData, onClose }) => {
             <button className='close-button' onClick={handleClosePopup}>
               &times;
             </button>
-            <h2 className='header'>{itemData.name}</h2>
+            <h2 className='header'>
+              <img src={mineIcon} alt="" style={{ width: '50px', marginRight: '10px', marginBottom: '10px' }} />
+              {itemData.name}
+            </h2>
             {itemData.userParserSettings && (
               <div>
                 <table className='info-table'>
@@ -57,21 +90,64 @@ const ParsingPresetViewComponent = ({ itemData, onClose }) => {
                     {itemData.userParserSettings.elementLocators.map((locator, index) => (
                       <p key={index}>
                         <p className='locator-expanded' onClick={() => handleToggleLocator(index)}>
-                          Элемент парсинга {index + 1} {expandedLocators[index] ? '[-]' : '[+]'}
+                          {locator.name ? `${locator.name}` : `Элемент парсинга ${index + 1}`} {expandedLocators[index] ? '▲' : '▼'}
                         </p>
                         {expandedLocators[index] && (
                           <div>
-                            <p className='text'> Тип локатора: {locator.type}</p>
-                            <p className='text'> Путь к локатору: {locator.pathToLocator}</p>
+                            <table className='info-table'>
+                              <tr>
+                                <td className="text-bold">Тип локатора</td>
+                                <td className="text">{locator.type}</td>
+                              </tr>
+                              <tr>
+                                <td className="text-bold">Путь к локатору</td>
+                                <td className="text">{locator.pathToLocator}</td>
+                              </tr>
+                            </table>
                           </div>
                         )}
                       </p>
                     ))}
                   </div>
                 )}
-                <a href={itemData.linkToDownloadResults} target='_blank' rel='noopener noreferrer'>
-                  Ссылка для скачивания результатов
-                </a>
+                <h3 className='subheader'>История парсинга</h3>
+
+                {itemData.parsingHistory && (
+                  <div>
+                    <table className="info-table">
+                      <thead>
+                        <th className='text-bold'>Дата</th>
+                        <th className="text-bold">Файл с результатами парсинга</th>
+                      </thead>
+                    {itemData.parsingHistory.map((historyItem) => (
+                      <tbody>
+                      <tr>
+                        <td className='text'>{formatDateTime(historyItem.date)}</td>
+                        <td>
+                        {itemData.userParserSettings.outputFileType === 'XLSX' && (
+                              <img
+                                src={xlsxIcon}
+                                alt='XLSX Icon'
+                                style={{ height: '30px', cursor: 'pointer' }}
+                                onClick={() => downloadFile(historyItem.linkToDownloadResults)}
+                              />
+                            )}
+                            {itemData.userParserSettings.outputFileType === 'CSV' && (
+                              <img
+                                src={csvIcon}
+                                alt='CSV Icon'
+                                style={{ height: '30px', cursor: 'pointer' }}
+                                onClick={() => downloadFile(historyItem.linkToDownloadResults)}
+                              />
+                            )}
+                        </td>
+                      </tr>
+                    </tbody>
+                    ))}
+                    </table>
+                  </div>
+                )}
+                
               </div>
             )}
           </div>
