@@ -17,10 +17,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
     width: 100%;
     top: 0;
     left: 0;
   }
+
+  .highlighted-text {
+    color: var(--hover-color);
+  }
+
 
   /* table {
     width: 100%;

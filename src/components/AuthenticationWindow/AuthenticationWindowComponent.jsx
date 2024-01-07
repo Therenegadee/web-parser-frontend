@@ -8,7 +8,7 @@ const AuthenticationWindowComponent = ({ onClose }) => {
   const [registrationEmail, setRegistrationEmail] = useState('');
   const [registrationLogin, setRegistrationLogin] = useState('');
   const [registrationPassword, setRegistrationPassword] = useState('');
-  const [activeTab, setActiveTab] = useState('login'); // Added state for the active tab
+  const [activeTab, setActiveTab] = useState('login');
   const overlayRef = useRef();
 
   const handleLogin = () => {
@@ -41,6 +41,9 @@ const AuthenticationWindowComponent = ({ onClose }) => {
   return (
     <div className="authentication-overlay">
       <div className="authentication-window" ref={overlayRef}>
+        <button className="close-button" onClick={onClose}>
+            &times;
+        </button>
         <h2>Вход / Регистрация</h2>
         <div className="tab-buttons">
           <button
@@ -71,7 +74,7 @@ const AuthenticationWindowComponent = ({ onClose }) => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <Link to="/recovery-password" style={{ fontSize: '15px' }} onClick={onClose}>
+              <Link to="/recovery-password" style={{ fontSize: '15px' }} onClick={onClose} className='text'>
                 Забыли пароль?
               </Link>
               <button onClick={handleLogin} className="action-button">

@@ -61,7 +61,7 @@ const FlyoutMenuComponent = ({ isLoggedIn }) => {
               </Link>
             </li>
             <li className='flyout-menu-element'>
-              <Link to="/parser/history" onClick={closeMenu}>
+              <Link to="/settings" onClick={closeMenu}>
               <img 
                 className='flyout-menu-element-icon' 
                 src={settingsIcon} alt="Settings" 

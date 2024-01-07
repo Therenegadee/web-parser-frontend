@@ -3,7 +3,7 @@ import './ProjectTable.css';
 import folderIcon from '../../assets/icons/projects/folder.svg'
 import mineIcon from '../../assets/icons/projects/mining-icon.svg'
 
-  // const dummyData = [
+  // const data = [
   //   {
   //       "id": 1,
   //       "userParserSettings": {
@@ -63,10 +63,11 @@ const ProjectTableComponent = ({ items, handleItemClick }) => {
     }
   };
 
+  
+
   const renderItems = (items, level = 0) => {
     return items.map((item) => (
       <React.Fragment key={item.id}>
-        {/* <tr onClick={() => toggleFolder(item.id)}> */}
         <tr onClick={() => (item.items ? toggleFolder(item.id) : handleItemClick(item))}>
           <td style={{ paddingLeft: `${0 + level * 20}px` }} >
             {item.items ? (
@@ -77,7 +78,7 @@ const ProjectTableComponent = ({ items, handleItemClick }) => {
             {item.name}
           </td>
           <td>Тэги {item.name.toLowerCase()}</td>
-          <td>{item.items ? 'Папка' : 'Парсинг'}</td>
+          <td>{item.items ? 'Папка' : 'Пресет'}</td>
         </tr>
         {expandedItems.includes(item.id) && item.items && (
           <React.Fragment>{renderItems(item.items, level + 1)}</React.Fragment>
